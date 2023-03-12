@@ -1,0 +1,96 @@
+$mainColor: #be264c;
+$optionalColor: rgb(248, 250, 225, 0.5);
+body {
+  color: $mainColor;
+  background :$optionalColor; 
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+h1 {
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.row {
+  display:flex;
+  .col {
+    flex:1;
+    &:last-child {
+      margin-left: 16px;
+    }
+  }
+}
+
+.tabs {
+  overflow: hidden;
+}
+.tab {
+  width: 100%;
+  color: #000;
+  overflow: hidden;
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid $mainColor;
+    background: $optionalColor;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      background: darken($optionalColor, 10%);
+    }
+    &::after {
+      content: ">";
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      transition: all .35s;
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 16px;
+    // color: $mainColor;
+    background: $optionalColor;
+    transition: all .35s;
+    text-align: center;
+  }
+  &-img{
+    width: 350px;
+    height: 350px;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 12px;
+    background: $mainColor;
+    cursor: pointer;
+    // &:hover {
+    //   // background: darken($mainColor, 10%);
+    // }
+  }
+}
+
+
+// :checked
+input:checked {
+  + .tab-label {
+    background: darken($optionalColor, 10%);
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .tab-content {
+    max-height: 400px;
+    padding: 16px;
+  }
+}

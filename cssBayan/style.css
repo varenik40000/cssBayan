@@ -1,0 +1,90 @@
+body {
+  color: #be264c;
+  background: rgba(248, 250, 225, 0.5);
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.row {
+  display: flex;
+}
+.row .col {
+  flex: 1;
+}
+.row .col:last-child {
+  margin-left: 16px;
+}
+
+.tabs {
+  overflow: hidden;
+}
+
+.tab {
+  width: 100%;
+  color: #000;
+  overflow: hidden;
+}
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid #be264c;
+  background: rgba(248, 250, 225, 0.5);
+  font-weight: bold;
+  cursor: pointer;
+}
+.tab-label:hover {
+  background: rgba(238, 243, 181, 0.5);
+}
+.tab-label::after {
+  content: ">";
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  transition: all 0.35s;
+}
+.tab-content {
+  max-height: 0;
+  padding: 0 16px;
+  background: rgba(248, 250, 225, 0.5);
+  transition: all 0.35s;
+  text-align: center;
+}
+.tab-img {
+  width: 350px;
+  height: 350px;
+}
+.tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 12px;
+  background: #be264c;
+  cursor: pointer;
+}
+
+input:checked + .tab-label {
+  background: rgba(238, 243, 181, 0.5);
+}
+input:checked + .tab-label::after {
+  transform: rotate(90deg);
+}
+input:checked ~ .tab-content {
+  max-height: 400px;
+  padding: 16px;
+}/*# sourceMappingURL=style.css.map */
