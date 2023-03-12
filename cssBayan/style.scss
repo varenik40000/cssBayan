@@ -1,15 +1,18 @@
 $mainColor: #be264c;
 $optionalColor: rgb(248, 250, 225, 0.5);
+
 body {
   color: $mainColor;
-  background :$optionalColor; 
+  background: $optionalColor;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 h1 {
   margin: 0;
   line-height: 2;
@@ -21,10 +24,13 @@ input {
   opacity: 0;
   z-index: -1;
 }
+
 .row {
-  display:flex;
+  display: flex;
+
   .col {
-    flex:1;
+    flex: 1;
+
     &:last-child {
       margin-left: 16px;
     }
@@ -34,10 +40,12 @@ input {
 .tabs {
   overflow: hidden;
 }
+
 .tab {
   width: 100%;
   color: #000;
   overflow: hidden;
+
   &-label {
     display: flex;
     justify-content: space-between;
@@ -46,9 +54,11 @@ input {
     background: $optionalColor;
     font-weight: bold;
     cursor: pointer;
+
     &:hover {
       background: darken($optionalColor, 10%);
     }
+
     &::after {
       content: ">";
       width: 20px;
@@ -57,6 +67,7 @@ input {
       transition: all .35s;
     }
   }
+
   &-content {
     max-height: 0;
     padding: 0 16px;
@@ -65,10 +76,12 @@ input {
     transition: all .35s;
     text-align: center;
   }
-  &-img{
+
+  &-img {
     width: 350px;
     height: 350px;
   }
+
   &-close {
     display: flex;
     justify-content: flex-end;
@@ -85,13 +98,15 @@ input {
 
 
 input:checked {
-  + .tab-label {
+  +.tab-label {
     background: darken($optionalColor, 10%);
+
     &::after {
       transform: rotate(90deg);
     }
   }
-  ~ .tab-content {
+
+  ~.tab-content {
     max-height: 400px;
     padding: 16px;
   }
@@ -103,13 +118,16 @@ input:checked {
     max-width: 800px;
   }
 }
+
 @media only screen and (min-width: 320px) and (max-width: 819px) {
   body {
     font-size: 12px;
   }
-  h1{
+
+  h1 {
     font-size: 24px;
   }
+
   .wrapper {
     max-width: 300px;
   }
