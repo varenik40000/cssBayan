@@ -3,6 +3,8 @@ $optionalColor: rgb(248, 250, 225, 0.5);
 body {
   color: $mainColor;
   background :$optionalColor; 
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 .wrapper {
   max-width: 1200px;
@@ -81,7 +83,7 @@ input {
 }
 
 
-// :checked
+
 input:checked {
   + .tab-label {
     background: darken($optionalColor, 10%);
@@ -92,5 +94,23 @@ input:checked {
   ~ .tab-content {
     max-height: 400px;
     padding: 16px;
+  }
+}
+
+
+@media only screen and (min-width: 820px) and (max-width: 1919px) {
+  .wrapper {
+    max-width: 800px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 819px) {
+  body {
+    font-size: 12px;
+  }
+  h1{
+    font-size: 24px;
+  }
+  .wrapper {
+    max-width: 300px;
   }
 }

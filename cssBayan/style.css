@@ -1,6 +1,8 @@
 body {
   color: #be264c;
   background: rgba(248, 250, 225, 0.5);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 .wrapper {
@@ -87,4 +89,21 @@ input:checked + .tab-label::after {
 input:checked ~ .tab-content {
   max-height: 400px;
   padding: 16px;
+}
+
+@media only screen and (min-width: 820px) and (max-width: 1919px) {
+  .wrapper {
+    max-width: 800px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 819px) {
+  body {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .wrapper {
+    max-width: 300px;
+  }
 }/*# sourceMappingURL=style.css.map */
