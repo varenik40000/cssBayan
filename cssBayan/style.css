@@ -53,12 +53,12 @@ input {
 .tab-label:hover {
   background: rgba(238, 243, 181, 0.5);
 }
-.tab-label::after {
-  content: ">";
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  transition: all 0.35s;
+.tab-label-symbol {
+  background-image: url(./image/chevron-down-solid.svg);
+  width: 5%;
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease-in;
 }
 .tab-content {
   max-height: 0;
@@ -80,11 +80,8 @@ input {
   cursor: pointer;
 }
 
-input:checked + .tab-label {
-  background: rgba(238, 243, 181, 0.5);
-}
-input:checked + .tab-label::after {
-  transform: rotate(90deg);
+input:checked + .tab-label .tab-label-symbol {
+  background-image: url(./image/chevron-up-solid.svg);
 }
 input:checked ~ .tab-content {
   max-height: 400px;
